@@ -9,6 +9,8 @@ var map = new mapboxgl.Map({
     zoom: 15
 });
 
+map.addControl(new mapboxgl.NavigationControl());
+
 var popup = new mapboxgl.Popup().setHTML('<h3>De Haagse Hogeschool</h3><p>Is momenteel dicht.</p>');
 
 // Adding a marker based on lon lat coordinates
@@ -17,55 +19,43 @@ var marker = new mapboxgl.Marker()
     .setPopup(popup)
     .addTo(map);
 
-// // wacht tot de map en styles geladen zijn
-// map.on('load', function() {
+map.on('load', function() {
+    map.addSource('places', {
+        'type': 'geojson',
+        'data': {
+            'type': 'FeatureCollection',
+            'features': myLocationsList
+        }
+    });
 
-//     // laad een extern bestand
-//     map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+    // Add a layer showing the places.
+    map.addLayer({
+        'id': 'places',
+        'type': 'symbol',
+        'source': 'places',
+        'layout': {
+            'icon-image': '{icon}-15',
+            'icon-allow-overlap': true
+        }
+    });
 
-//         // voeg image toe
-//         map.addImage('cat', image);
+    // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
 
-//         // defineer een punt in het geheugen
-//         map.addSource('point', {
-//             type: 'geojson',
-//             data: {
-//                 type: 'FeatureCollection',
-//                 features: [{
-//                     type: 'Feature',
-//                     geometry: {
-//                         type: 'Point',
-//                         coordinates: [4.32284, 52.067101]
-//                     }
-//                 }]
-//             }
-//         });
+    map.on('mouseenter', 'places', function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
 
-//         // plak de nieuwe source 'point' op de kaart in een eigen layer
-//         map.addLayer({
-//             id: 'points',
-//             type: 'symbol',
-//             source: 'point',
-//             layout: {
-//                 'icon-image': 'cat',
-//                 'icon-size': 0.25
-//             }
-//         });
-//     });
-// });
+        // Populate the popup and set its coordinates based on the feature found.
+        popup.setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
 
-// style: 'mapbox://styles/mapbox/satellite-v9'
-// style: 'mapbox://styles/mapbox/dark-v10'
-// pitch: 45,
-// bearing: -17.6,
-// Positioning the map on a certain longitute + latitude and zooming in
-// Let op de volgorde van de lat, lon!!
-// center: [4.322840, 52.067101],
-// zoom: 15,
-
-
-
-
-
-// Add zoom and rotation controls to the map.
-// map.addControl(new mapboxgl.NavigationControl());
+    map.on('mouseleave', 'places', function() {
+        popup.remove();
+    });
+});
