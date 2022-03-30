@@ -62,7 +62,7 @@ map.on('load', function() {
 
 
 // OpenWeather
-function getAPIdata() {
+function getAPIdataWeather() {
 
     // construct request
     var request = 'https://api.openweathermap.org/data/2.5/weather?lat=28.485875470077975&lon=-80.54288494833472&appid=7fc21fb9ec63266e22bf47c6bd4a1e1a';
@@ -106,5 +106,5 @@ function getAPIdataElevation() {
 }
 
 // init data stream
-getAPIdata();
+getAPIdataWeather();
 getAPIdataElevation();
