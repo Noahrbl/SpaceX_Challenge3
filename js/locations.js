@@ -1,100 +1,67 @@
 myLocationsList = [{
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Make it Mount Pleasant</strong><p>Make it Mount Pleasant is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>',
-      'icon': 'theatre'
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>Walt Disney World</strong><p>Walt Disney World Resort is de populairste gezinsattractie van Florida en is dat al sinds het Magic Kingdom in 1971 zijn poorten voor het publiek opende. Sindsdien is het resort - door gasten meestal simpelweg "Disney World" genoemd - enorm gegroeid, nu omvat het vier themaparken, twee waterparken, een winkel- en uitgaansgebied, een sportcomplex, een uitgebreide promenade en niet minder dan 28 accommodatie-opties die eigendom zijn van Disney.</p>',
+            'icon': 'amusement-park'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.57064344191608, 28.377355595839685]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.038659, 38.931567]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Mad Men Season Five Finale Watch Party</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a Mad Men Season Five Finale Watch Party, complete with 60s costume contest, Mad Men trivia, and retro food and drink. 8:00-11:00 p.m. $10 general admission, $20 admission and two hour open bar.</p>',
-      'icon': 'theatre'
+    {
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>SeaWorld Orlando</strong><p>Orlandos SeaWorld staat bekend om zijn enorme aquaria, dolfijnen- en walvisshows, aanraakzwembaden en vele spannende attracties. Hoewel gasten de dolfijnen niet langer mogen voeren, kun je nog steeds in het interactieve dolfijnenzwembad reiken en deze prachtige, intelligente wezens aaien.</p>',
+            'icon': 'zoo'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.4597703838836, 28.4109900728783]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.003168, 38.894651]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a Big Backyard Beach Bash and Wine Fest on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>',
-      'icon': 'bar'
+    {
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>Kennedy Space Center Visitor Complex</strong><p>Breng zeker een bezoek aan de Heroes and Legends-tentoonstellingen, die gasten kennis laten maken met de levens en carrières van degenen die het ruimteprogramma mogelijk hebben gemaakt, van ingenieurs tot vroege ruimteverkenners. Dit omvat ook de U.S. Astronaut Hall of Fame, evenals de Rocket Garden, waar u de raketten van enkele van de beroemdste vluchten van NASA kunt zien, waaronder de Apollo- en Gemini-programmas</p>',
+            'icon': 'rocket'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-80.68184649403216, 28.520454630197953]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.090372, 38.881189]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Ballston Arts & Crafts Market</strong><p>The Ballston Arts & Crafts Market sets up shop next to the Ballston metro this Saturday for the first of five dates this summer. Nearly 35 artists and crafters will be on hand selling their wares. 10:00-4:00 p.m.</p>',
-      'icon': 'art-gallery'
+    {
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>Gatorland</strong><p>Gatorland, aangekondigd als de Alligatorhoofdstad van de wereld, beschikt over duizenden alligators (inclusief zeldzame leucistische alligators) en krokodillen en vele andere dieren. Attracties in het park zijn onder meer een broedmoeras met een promenade en uitkijktoren, zip-lijnen, een off-road moerasvoertuigtour, een berijdbare miniatuurspoorweg, alligator-voedershows, alligatorworstelshows, een volière, een kinderboerderij en educatieve programmas. Het broedgebied van het park werd gebruikt bij de opnames van de film Indiana Jones and the Temple of Doom uit 1984.</p>',
+            'icon': 'zoo'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.40083075980834, 28.365064487374703]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.111561, 38.882342]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': "<strong>Seersucker Bike Ride and Social</strong><p>Feeling dandy? Get fancy, grab your bike, and take part in this year's Seersucker Social bike ride from Dandies and Quaintrelles. After the ride enjoy a lawn party at Hillwood with jazz, cocktails, paper hat-making, and more. 11:00-7:00 p.m.</p>",
-      'icon': 'bicycle'
+    {
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>ICON Park</strong><p>ICON Park, verspreid over 20 hectare aan International Drive, is een interessante mix van winkelen, dineren en amusement in de open lucht, en omvat een aantal geweldige attracties die geschikt zijn voor alle leeftijden. De camping verankert zich in het enorme Wheel in ICON Park, een 120 meter hoog reuzenrad dat een fantastisch uitzicht over het gebied biedt. Het is vooral s nachts indrukwekkend, wanneer het wiel wordt verlicht door 64.000 lampjes die regelmatig van kleur veranderen.</p>',
+            'icon': 'amusement-park'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.46928871170677, 28.44325977185159]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.052477, 38.943951]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Capital Pride Parade</strong><p>The annual Capital Pride Parade makes its way through Dupont this Saturday. 4:30 p.m. Free.</p>',
-      'icon': 'star'
+    {
+        'type': 'Feature',
+        'properties': {
+            'description': '<strong>Exotic Animal Experience</strong><p>Orlandos Exotic Animal Experience biedt bezoekers de kans om persoonlijke ontmoetingen te hebben met enkele van s werelds meest interessante dieren. Bewoners van het park zijn verschillende soorten kangoeroes en lemuren, uilapen, kinkajou, herten en tweevingerige luiaards.</p>',
+            'icon': 'zoo'
+        },
+        'geometry': {
+            'type': 'Point',
+            'coordinates': [-81.08425788732669, 28.47154370120888]
+        }
     },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.043444, 38.909664]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Muhsinah</strong><p>Jazz-influenced hip hop artist Muhsinah plays the Black Cat (1811 14th Street NW) tonight with Exit Clov and Gods’illa. 9:00 p.m. $12.</p>',
-      'icon': 'music'
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.031706, 38.914581]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': "<strong>A Little Night Music</strong><p>The Arlington Players' production of Stephen Sondheim's <em>A Little Night Music</em> comes to the Kogod Cradle at The Mead Center for American Theater (1101 6th Street SW) this weekend and next. 8:00 p.m.</p>",
-      'icon': 'music'
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.020945, 38.878241]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      'description': '<strong>Truckeroo</strong><p>Truckeroo brings dozens of food trucks, live music, and games to half and M Street SE (across from Navy Yard Metro Station) today from 11:00 a.m. to 11:00 p.m.</p>',
-      'icon': 'music'
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [-77.007481, 38.876516]
-    }
-  }
 ];

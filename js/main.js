@@ -5,13 +5,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibXJkeW5hbWl0ZTk5IiwiYSI6ImNrOHI4NTlrMzAwb24zZ
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mrdynamite99/ck8r94ciz0z6f1ilgx09gkizk',
-    center: [-80.544444, 28.485833],
-    zoom: 15
+    center: [-80.968514, 28.540960],
+    zoom: 10
 });
 
 map.addControl(new mapboxgl.NavigationControl());
 
-var popup = new mapboxgl.Popup().setHTML('<h3>De Haagse Hogeschool</h3><p>Is momenteel dicht.</p>');
+var popup = new mapboxgl.Popup().setHTML('<h3>SpaceX landingsplaats</h3><p>Het eerste deel van het landingscomplex is in 2015 aangelegd op de oostzijde van het voormalige Lanceercomplex 13. Het bestaat uit een groot rond betonnen plein waarop in het midden de "X" van het SpaceX logo is geschilderd. Aan de rand staat een aantal op afstand bestuurbare waterkanonnen waarmee eventuele restanten brandende kerosine onder de raketmotoren snel kunnen worden geblust.</p><img src="images/landing.png" alt="Italian Trulli" style="width:100%;height:100%;">');
 
 // Adding a marker based on lon lat coordinates
 var marker = new mapboxgl.Marker()
@@ -59,3 +59,37 @@ map.on('load', function() {
         popup.remove();
     });
 });
+
+
+// OpenWeather
+function getAPIdata() {
+
+    // construct request
+    var request = 'https://api.openweathermap.org/data/2.5/weather?lat=28.538336&lon=-81.379234&appid=7fc21fb9ec63266e22bf47c6bd4a1e1a';
+
+    // get current weather
+    fetch(request)
+
+    // parse response to JSON format
+    .then(function(response) {
+        return response.json();
+    })
+
+    // do something with response
+    .then(function(response) {
+        // show full JSON object
+        //console.log(response);
+        console.log(response.main.temp - 273.15);
+        var weatherBox = document.getElementById('weather');
+        //weatherBox.innerHTML = response;
+        //weatherBox.innerHTML = response.weather[0].description;
+        weatherBox.innerHTML = response.main.temp;
+
+        // var degC = Math.floor(response.main.temp - 273.15);
+        // var weatherBox = document.getElementById('weather');
+        // weatherBox.innerHTML = degC + '&#176;C <br>';
+    });
+}
+
+// init data stream
+getAPIdata();
