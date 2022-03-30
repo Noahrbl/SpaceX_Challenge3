@@ -65,7 +65,7 @@ map.on('load', function() {
 function getAPIdata() {
 
     // construct request
-    var request = 'https://api.openweathermap.org/data/2.5/weather?lat=28.538336&lon=-81.379234&appid=7fc21fb9ec63266e22bf47c6bd4a1e1a';
+    var request = 'https://api.openweathermap.org/data/2.5/weather?lat=28.485875470077975&lon=-80.54288494833472&appid=7fc21fb9ec63266e22bf47c6bd4a1e1a';
 
     // get current weather
     fetch(request)
@@ -78,18 +78,33 @@ function getAPIdata() {
     // do something with response
     .then(function(response) {
         // show full JSON object
-        //console.log(response);
-        console.log(response.main.temp - 273.15);
         var weatherBox = document.getElementById('weather');
-        //weatherBox.innerHTML = response;
-        //weatherBox.innerHTML = response.weather[0].description;
-        weatherBox.innerHTML = response.main.temp;
+        weatherBox.innerHTML = (response.main.temp - 273.15).toFixed(0) + ' &#730;C';
+    });
+}
 
-        // var degC = Math.floor(response.main.temp - 273.15);
-        // var weatherBox = document.getElementById('weather');
-        // weatherBox.innerHTML = degC + '&#176;C <br>';
+function getAPIdataElevation() {
+
+    // construct request
+    var request = 'https://elevation-api.io/api/elevation?points=(28.485833,-80.544444)&key=5Z6Oa9effPaZd470tELkyrif8bRHcY';
+
+    // get current weather
+    fetch(request)
+
+    // parse response to JSON format
+    .then(function(response) {
+        return response.json();
+    })
+
+    // do something with response
+    .then(function(response) {
+        // show full JSON object
+        console.log(response.elevation)
+        var elevationBox = document.getElementById('elev');
+        elevationBox.innerHTML = response.elevation;
     });
 }
 
 // init data stream
 getAPIdata();
+getAPIdataElevation();
