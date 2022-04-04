@@ -1,3 +1,5 @@
+setInterval(displayClock, 1000);
+
 // Set api token
 mapboxgl.accessToken = 'pk.eyJ1IjoibXJkeW5hbWl0ZTk5IiwiYSI6ImNrOHI4NTlrMzAwb24zZXBlM2lrZWg5MTUifQ.8mfos-T19QOh5aTpiDUPzQ';
 
@@ -99,12 +101,30 @@ function getAPIdataElevation() {
     // do something with response
     .then(function(response) {
         // show full JSON object
-        console.log(response.elevation)
+        console.log(response.elevations.elevation);
         var elevationBox = document.getElementById('elev');
         elevationBox.innerHTML = response.elevation;
     });
 }
 
+
+function displayClock() {
+
+    var today = new Date();
+
+    var hours = today.getUTCHours();
+    var minutes = today.getUTCMinutes();
+    var seconds = today.getUTCSeconds();
+
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById('clock').innerHTML = hours + ":" + minutes + ":" + seconds + ' UTC';
+
+}
+
 // init data stream
 getAPIdataWeather();
 getAPIdataElevation();
+displayClock();

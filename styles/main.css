@@ -125,9 +125,6 @@ p {
         grid-gap: 20px;
         margin: 20px;
     }
-    .small-card {
-        padding: 20px;
-    }
     .main-cards,
     .main-cards-line {
         column-gap: 20px;
@@ -138,26 +135,28 @@ p {
         margin-bottom: 20px;
         padding: 24px;
     }
+    .small-card_info {
+        font-size: 2em;
+    }
 }
 
 
 /* Large devices (tablets, 768px and up) */
 
-@media only screen and (min-width: 768px) {
-    .top-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+@media only screen and (min-width: 768px) {}
 
 
-/* Large devices (laptops/desktops, 992px and up) */
+/* Large devices (laptops/desktops, 1280px and up) */
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1280px) {
     .main-cards {
         column-count: 2;
     }
     .main-cards-line {
         column-count: 1;
+    }
+    .top-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
